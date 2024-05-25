@@ -59,6 +59,7 @@
       <DependentUpon>FrmRecenzije.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Narudžbe.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
