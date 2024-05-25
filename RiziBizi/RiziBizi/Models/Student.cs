@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RiziBizi.Models
 {
-    public abstract class Student
+    public abstract class Student : Narudžbe
     {
         public int Id { get; set; }
         public string Ime { get; set; }
