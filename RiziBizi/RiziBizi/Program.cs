@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace RiziBizi
         [STAThread]
         static void Main()
         {
+            DB.SetConfiguration("PI2023_slovric22_DB", "PI2324_slovric22_User", "(Y+AFr5a");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());

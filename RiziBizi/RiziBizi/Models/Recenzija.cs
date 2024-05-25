@@ -9,5 +9,6 @@ namespace RiziBizi.Models
     public abstract class Recenzija : Narudžbe
     {
         public int Ocjena { get; set; }
+        public string Komentar {  get; set; }
     }
 }
