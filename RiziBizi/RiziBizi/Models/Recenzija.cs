@@ -11,9 +11,10 @@ namespace RiziBizi.Models
     {
 
         public int Id { get; set; }
-        public int Ocjena { get; set; }
+        public string Ocjena { get; set; }
         public string Komentar { get; set; }
         public string Username { get;  set; }
+        public string Narudžbe {  get; set; }
     }
 
     }

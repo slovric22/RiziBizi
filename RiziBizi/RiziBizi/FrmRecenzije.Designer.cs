@@ -54,6 +54,7 @@
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Dodaj recenziju";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnDelete
             // 

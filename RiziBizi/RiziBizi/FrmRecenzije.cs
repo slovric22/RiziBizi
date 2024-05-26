@@ -35,5 +35,9 @@ namespace RiziBizi
             dgvRecenzije.Columns["Username"].DisplayIndex = 3;
         }
 
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
