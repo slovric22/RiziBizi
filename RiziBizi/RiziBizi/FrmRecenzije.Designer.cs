@@ -1,6 +1,6 @@
 ﻿namespace RiziBizi
 {
-    partial class FrmRecenzije
+    partial class frmRecenzije
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvRecenzije = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecenzije)).BeginInit();
             this.SuspendLayout();
             // 
-            // FrmRecenzije
+            // dgvRecenzije
+            // 
+            this.dgvRecenzije.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRecenzije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecenzije.Location = new System.Drawing.Point(20, 24);
+            this.dgvRecenzije.Name = "dgvRecenzije";
+            this.dgvRecenzije.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRecenzije.Size = new System.Drawing.Size(749, 402);
+            this.dgvRecenzije.TabIndex = 0;
+           
+            // 
+            // frmRecenzije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmRecenzije";
+            this.Controls.Add(this.dgvRecenzije);
+            this.Name = "frmRecenzije";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recenzije";
             this.Load += new System.EventHandler(this.FrmRecenzije_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecenzije)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvRecenzije;
     }
 }

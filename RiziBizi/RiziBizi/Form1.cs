@@ -29,7 +29,7 @@ namespace RiziBizi
             else if (username == "admin" && password == "test")
                 {
                 Hide();
-                 FrmRecenzije frmRecenzije = new FrmRecenzije();
+                 frmRecenzije frmRecenzije = new frmRecenzije();
                 frmRecenzije.ShowDialog();
                 Close();
             }

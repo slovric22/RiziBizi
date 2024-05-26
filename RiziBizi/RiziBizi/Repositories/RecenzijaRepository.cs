@@ -17,7 +17,7 @@ namespace RiziBizi.Repositories
     public class RecenzijaRepository
     {
 
-        public static Recenzija GetRecenzija(int id)
+        public  Recenzija GetRecenzija(int id)
         {
             Recenzija recenzija = null;
             string sql = $"SELECT * FROM Recenzija WHERE ID = {id}";
@@ -34,7 +34,7 @@ namespace RiziBizi.Repositories
         }
 
      
-        public static List<Recenzija> GetEmployees()
+        public static List<Recenzija> GetRecenzija()
         {
             List<Recenzija> recenzije = new List<Recenzija>();
             string sql = "SELECT * FROM Recenzija";
@@ -93,7 +93,7 @@ namespace RiziBizi.Repositories
         
         private static Recenzija CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["Id"].ToString());
+            int id = int.Parse(reader["Id_recenzija"].ToString());
             string komentar = reader["Komentar"].ToString();
             string username = reader["Username"].ToString();
             int.TryParse(reader["Ocjena"].ToString(), out int ocjena);
