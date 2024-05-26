@@ -1,5 +1,4 @@
-﻿using RiziBizi.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,8 +10,11 @@ using System.Windows.Forms;
 
 namespace RiziBizi
 {
-    public partial class FrmRecenziranje : Form
+    public partial class CRUD : Form
     {
+        public CRUD()
+        {
+            InitializeComponent();
+        }
     }
-
 }
