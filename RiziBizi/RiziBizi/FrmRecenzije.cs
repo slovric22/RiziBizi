@@ -29,7 +29,10 @@ namespace RiziBizi
             List<Recenzija> recenzije = RecenzijaRepository.GetRecenzija();
             dgvRecenzije.DataSource = recenzije;
 
-          
+            dgvRecenzije.Columns["Id"].DisplayIndex = 0;
+            dgvRecenzije.Columns["Ocjena"].DisplayIndex = 1;
+            dgvRecenzije.Columns["Komentar"].DisplayIndex = 2;
+            dgvRecenzije.Columns["Username"].DisplayIndex = 3;
         }
 
     }
