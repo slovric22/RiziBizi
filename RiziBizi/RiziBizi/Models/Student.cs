@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBLayer;
 
 namespace RiziBizi.Models
 {
-    public abstract class Student : Narudžbe
+    public  class Student : Recenzija
     {
-        public int Id { get; set; }
+        
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public override string ToString()
-        {
-            return Ime + " " + Prezime;
-        }
+     
+        
 
     }
 }
