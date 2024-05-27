@@ -36,7 +36,7 @@ namespace RiziBizi.Repositories
         public static List<CRUD> GetCRUD(Recenzija recenzija)
         {
             List<CRUD> crud = new List<CRUD>();
-            string sql = $"SELECT * FROM CRUD WHERE IdRecenzija = {recenzija.Id}";
+            string sql = $"SELECT * FROM CRUD WHERE NazivRecenzija = {recenzija.Naziv}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
@@ -52,13 +52,14 @@ namespace RiziBizi.Repositories
         {
             int idNarudžbe = int.Parse(reader["IdNarudžbe"].ToString());
             var narudžbe = NarudžbeRepository.GetNarudžbe(idNarudžbe);
-            int idRecenzija = int.Parse(reader["IdRecenzija"].ToString());
+            int Recenzija = int.Parse(reader["IdRecenzija"].ToString());
+            
             int ocjena = int.Parse(reader["Ocjena"].ToString());
             var crud = new CRUD
 
             {
                 Narudžbe = narudžbe,
-              
+                
                 Ocjena = ocjena
             };
             return crud;

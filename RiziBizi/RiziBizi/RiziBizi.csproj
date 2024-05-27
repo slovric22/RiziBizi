@@ -73,6 +73,7 @@
     <Compile Include="Repositories\CRUDRepository.cs" />
     <Compile Include="Repositories\NarudžbeRepository.cs" />
     <Compile Include="Repositories\RecenzijaRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

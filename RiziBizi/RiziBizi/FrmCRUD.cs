@@ -16,6 +16,7 @@ using RiziBizi;
 using System.Drawing.Text;
 using System.Security.Cryptography;
 
+
 namespace RiziBizi
 {
 
@@ -49,17 +50,35 @@ namespace RiziBizi
         }
         private void SetFormText()
         {
-            Text = recenzija.Naziv ;
+            Text = recenzija.Naziv +" "+ recenzija.Id ;
         }
 
         private void cboNarudžbe_SelectedIndexChanged(object sender, EventArgs e)
         {
                 var currentNarudžbe = cboNarudžbe.SelectedItem as Narudžbe;
-            txtKomentar.Text = currentNarudžbe.Recenzija;
-            txtUsername.Text = currentNarudžbe.Sastojci;
+            txtKomentar.Text = currentNarudžbe.Sastojci;
+            txtUsername.Text = currentNarudžbe.Recenzija;
            
             numOcjena.Minimum = 0;
             numOcjena.Maximum = 4;
+
+
+           
+            var crud =
+           CRUDRepository.GetCRUD(SelectedRecenzija, currentNarudžbe);
+            if (crud != null)
+            {
+                txtKomentar.Text = recenzija.Komentar.ToString();
+                txtUsername.Text = recenzija.Username.ToString();
+                numOcjena.Value = recenzija.Ocjena;
+            }
+            else
+            {
+               
+                numOcjena.Value = 0;
+            }
+            
+            
         }
     }
 

@@ -96,7 +96,7 @@ namespace RiziBizi.Repositories
             int id = int.Parse(reader["Id_recenzija"].ToString());
             string komentar = reader["Komentar"].ToString();
             string username = reader["Username"].ToString();
-            string ocjena = reader["Ocjena"].ToString();
+            int ocjena = int.Parse(reader["Ocjena"].ToString());
 
             var recenzija = new Recenzija
             {
