@@ -16,36 +16,30 @@ namespace RiziBizi.Repositories
         {
 
             
-            public static Narudžbe GetNarudžbe(string naziv)
-            {
-            
-                string sql = $"SELECT * FROM Narudžbe WHERE Naziv = '{naziv}'";
-            return FetchNarudžbe(sql);
-        }
+           
 
             
             public static Narudžbe GetNarudžbe(int id)
             {
-                string sql = $"SELECT * FROM Administrators WHERE ID_administrator = {id}";
-                return FetchNarudžbe(sql);
-            }
-
-            private static Narudžbe FetchNarudžbe(string sql)
+            Narudžbe narudžbe = null;
+            string sql = $"SELECT * FROM Narudžbe WHERE Id = {id}";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
             {
-                DB.OpenConnection();
-                var reader = DB.GetDataReader(sql);
-                Narudžbe narudžbe = null;
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    narudžbe = CreateObject(reader);
-                    reader.Close();
-                }
-                DB.CloseConnection();
-                return narudžbe;
+                reader.Read();
+                narudžbe = CreateObject(reader);
+                reader.Close();
             }
+            DB.CloseConnection();
+            return narudžbe;
 
-            public static List<Narudžbe> GetNarudžbe()
+
+        }
+
+
+
+        public static List<Narudžbe> GetNarudžbe()
             {
                 List<Narudžbe> narudžbe = new List<Narudžbe>();
                 string sql = "SELECT * FROM Narudžbe";
@@ -63,7 +57,7 @@ namespace RiziBizi.Repositories
 
             private static Narudžbe CreateObject(SqlDataReader reader)
             {
-                int id = int.Parse(reader["ID_narudžbe"].ToString());
+            int id =int.Parse( reader["Id"].ToString());  
                 string naziv = reader["Naziv"].ToString();
                 string sastojci = reader["Sastojci"].ToString();
                 

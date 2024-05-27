@@ -37,7 +37,17 @@ namespace RiziBizi
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            FrmCRUD frmCreate = new FrmCRUD();
+            frmCreate.ShowDialog();
+            ShowRecenzije();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
 
         }
     }
 }
+
+        
+    

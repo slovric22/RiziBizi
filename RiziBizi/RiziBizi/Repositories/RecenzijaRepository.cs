@@ -17,7 +17,7 @@ namespace RiziBizi.Repositories
     public class RecenzijaRepository
     {
 
-        public  Recenzija GetRecenzija(int id)
+        public Recenzija GetRecenzija(int id)
         {
             Recenzija recenzija = null;
             string sql = $"SELECT * FROM Recenzija WHERE ID = {id}";
@@ -33,7 +33,7 @@ namespace RiziBizi.Repositories
             return recenzija;
         }
 
-     
+
         public static List<Recenzija> GetRecenzija()
         {
             List<Recenzija> recenzije = new List<Recenzija>();
@@ -43,7 +43,7 @@ namespace RiziBizi.Repositories
             while (reader.Read())
             {
                 Recenzija narudžbe = CreateObject(reader);
-                 recenzije .Add(narudžbe);
+                recenzije.Add(narudžbe);
             }
             reader.Close();
             DB.CloseConnection();
@@ -60,7 +60,7 @@ namespace RiziBizi.Repositories
             }
             else
             {
-                sql = $"UPDATE Recenzija SET Ocjena = '{recenzija.Ocjena}', Komentar = '{recenzija.Komentar}'";
+               sql = $"UPDATE Recenzija SET Ocjena = '{recenzija.Ocjena}', Komentar = '{recenzija.Komentar}'";
             }
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
@@ -90,7 +90,7 @@ namespace RiziBizi.Repositories
             return recenzije;
         }
 
-        
+
         private static Recenzija CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["Id_recenzija"].ToString());
@@ -99,13 +99,22 @@ namespace RiziBizi.Repositories
             string ocjena = reader["Ocjena"].ToString();
 
             var recenzija = new Recenzija
-            { 
-            Id = id,
-            Komentar = komentar,
-            Username = username,
-            Ocjena = ocjena
+            {
+                Id = id,
+                Komentar = komentar,
+                Username = username,
+                Ocjena = ocjena
             };
             return recenzija;
+        }
+        public static void Create(Recenzija recenzija)
+        {
+            string sql = $"INSERT INTO Recenzija (Id_recenzija, Komentar, Username , Ocjena) " +
+                         $"VALUES ('{recenzija.Id}', '{recenzija.Komentar}', {recenzija.Username}, '{recenzija.Ocjena}')";
+
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
         }
     }
 }

@@ -7,9 +7,9 @@ using DBLayer;
 
 namespace RiziBizi.Models
 {
-    public  class Student : Recenzija
+    public  class Student : object
     {
-        
+        public int Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
      
