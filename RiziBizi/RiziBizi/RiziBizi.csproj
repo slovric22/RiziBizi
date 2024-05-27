@@ -70,6 +70,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CRUDRepository.cs" />
     <Compile Include="Repositories\NarudžbeRepository.cs" />
     <Compile Include="Repositories\RecenzijaRepository.cs" />
     <EmbeddedResource Include="Form1.resx">
