@@ -37,13 +37,12 @@ namespace RiziBizi
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            FrmCRUD frmCreate = new FrmCRUD();
-            frmCreate.ShowDialog();
-            ShowRecenzije();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
+            Recenzija selectedRecenzija = dgvRecenzije.CurrentRow.DataBoundItem as Recenzija;
+            if (selectedRecenzija != null)
+            {
+                FrmCRUD frmCRUD = new FrmCRUD(selectedRecenzija);
+                frmCRUD.ShowDialog();
+            }
 
         }
     }

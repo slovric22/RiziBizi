@@ -18,8 +18,20 @@ using System.Security.Cryptography;
 
 namespace RiziBizi
 {
+
+
+
     public partial class FrmCRUD : Form
     {
+        private Recenzija recenzija;
+
+        public FrmCRUD(Recenzija selectedRecenzija)
+        {
+            InitializeComponent();
+            recenzija = selectedRecenzija;
+        }
+
+
         private void btnSpremi_Click(object sender, EventArgs e)
         {
 
@@ -27,7 +39,28 @@ namespace RiziBizi
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+        private void FrmCRUD_Load(object sender, EventArgs e)
+        {
+            SetFormText();
+            var narudžbe = NarudžbeRepository.GetNarudžbe();
+            cboNarudžbe.DataSource = narudžbe;
+        }
+        private void SetFormText()
+        {
+            Text = recenzija.Naziv ;
+        }
 
+        private void cboNarudžbe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var currentNarudžbe = cboNarudžbe.SelectedItem as Narudžbe;
+            txtKomentar.Text = currentNarudžbe.Recenzija;
+            txtUsername.Text = currentNarudžbe.Sastojci;
+           
+            numOcjena.Minimum = 0;
+            numOcjena.Maximum = 4;
         }
     }
+
 }

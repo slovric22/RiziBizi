@@ -109,6 +109,7 @@
             this.cboNarudžbe.Name = "cboNarudžbe";
             this.cboNarudžbe.Size = new System.Drawing.Size(267, 21);
             this.cboNarudžbe.TabIndex = 11;
+            this.cboNarudžbe.SelectedIndexChanged += new System.EventHandler(this.cboNarudžbe_SelectedIndexChanged);
             // 
             // numOcjena
             // 
