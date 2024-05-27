@@ -64,6 +64,7 @@
     <Compile Include="FrmRecenzije.Designer.cs">
       <DependentUpon>FrmRecenzije.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD.cs" />
     <Compile Include="Models\Narudžbe.cs" />
     <Compile Include="Models\Recenzija.cs" />
     <Compile Include="Models\Student.cs" />

@@ -54,7 +54,7 @@ namespace RiziBizi
 
         private void cboNarudžbe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var currentNarudžbe = cboNarudžbe.SelectedItem as Narudžbe;
+                var currentNarudžbe = cboNarudžbe.SelectedItem as Narudžbe;
             txtKomentar.Text = currentNarudžbe.Recenzija;
             txtUsername.Text = currentNarudžbe.Sastojci;
            
