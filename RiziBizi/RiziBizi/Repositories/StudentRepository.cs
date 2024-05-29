@@ -9,7 +9,7 @@ using RiziBizi.Models;
 using RiziBizi;
 namespace RiziBizi.Repositories
 {
-    public class StudentRepository 
+    public class StudentRepository
     {
         public static Student GetStudent(string username)
         {
@@ -38,7 +38,7 @@ namespace RiziBizi.Repositories
         private static Student CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["Id"].ToString());
-            
+
             string ime = reader["Ime"].ToString();
             string lozinka = reader["Lozinka"].ToString();
             var student = new Student

@@ -35,16 +35,17 @@
             this.btnSpremi = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.cboNarudžbe = new System.Windows.Forms.ComboBox();
-            this.numOcjena = new System.Windows.Forms.NumericUpDown();
             this.btnOdustani = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numOcjena)).BeginInit();
+            this.txtOcjena = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtNarudžbe = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNarudžba
             // 
             this.lblNarudžba.AutoSize = true;
-            this.lblNarudžba.Location = new System.Drawing.Point(19, 46);
+            this.lblNarudžba.Location = new System.Drawing.Point(12, 90);
             this.lblNarudžba.Name = "lblNarudžba";
             this.lblNarudžba.Size = new System.Drawing.Size(56, 13);
             this.lblNarudžba.TabIndex = 0;
@@ -53,7 +54,7 @@
             // lblOcjena
             // 
             this.lblOcjena.AutoSize = true;
-            this.lblOcjena.Location = new System.Drawing.Point(19, 293);
+            this.lblOcjena.Location = new System.Drawing.Point(9, 313);
             this.lblOcjena.Name = "lblOcjena";
             this.lblOcjena.Size = new System.Drawing.Size(44, 13);
             this.lblOcjena.TabIndex = 4;
@@ -62,7 +63,7 @@
             // lblKomentar
             // 
             this.lblKomentar.AutoSize = true;
-            this.lblKomentar.Location = new System.Drawing.Point(19, 107);
+            this.lblKomentar.Location = new System.Drawing.Point(9, 139);
             this.lblKomentar.Name = "lblKomentar";
             this.lblKomentar.Size = new System.Drawing.Size(55, 13);
             this.lblKomentar.TabIndex = 6;
@@ -70,17 +71,18 @@
             // 
             // txtKomentar
             // 
-            this.txtKomentar.Location = new System.Drawing.Point(12, 123);
+            this.txtKomentar.Location = new System.Drawing.Point(12, 155);
             this.txtKomentar.Multiline = true;
             this.txtKomentar.Name = "txtKomentar";
             this.txtKomentar.Size = new System.Drawing.Size(267, 92);
             this.txtKomentar.TabIndex = 7;
+            this.txtKomentar.TextChanged += new System.EventHandler(this.txtKomentar_TextChanged);
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(12, 393);
+            this.btnSpremi.Location = new System.Drawing.Point(12, 375);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(103, 32);
+            this.btnSpremi.Size = new System.Drawing.Size(103, 50);
             this.btnSpremi.TabIndex = 8;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -89,7 +91,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(19, 240);
+            this.lblUsername.Location = new System.Drawing.Point(12, 260);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(78, 13);
             this.lblUsername.TabIndex = 9;
@@ -97,45 +99,63 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(12, 256);
+            this.txtUsername.Location = new System.Drawing.Point(12, 276);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(267, 20);
             this.txtUsername.TabIndex = 10;
-            // 
-            // cboNarudžbe
-            // 
-            this.cboNarudžbe.FormattingEnabled = true;
-            this.cboNarudžbe.Location = new System.Drawing.Point(12, 62);
-            this.cboNarudžbe.Name = "cboNarudžbe";
-            this.cboNarudžbe.Size = new System.Drawing.Size(267, 21);
-            this.cboNarudžbe.TabIndex = 11;
-            this.cboNarudžbe.SelectedIndexChanged += new System.EventHandler(this.cboNarudžbe_SelectedIndexChanged);
-            // 
-            // numOcjena
-            // 
-            this.numOcjena.Location = new System.Drawing.Point(12, 309);
-            this.numOcjena.Name = "numOcjena";
-            this.numOcjena.Size = new System.Drawing.Size(85, 20);
-            this.numOcjena.TabIndex = 12;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(231, 393);
+            this.btnOdustani.Location = new System.Drawing.Point(234, 375);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(103, 32);
+            this.btnOdustani.Size = new System.Drawing.Size(100, 50);
             this.btnOdustani.TabIndex = 13;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
+            // txtOcjena
+            // 
+            this.txtOcjena.Location = new System.Drawing.Point(12, 330);
+            this.txtOcjena.Name = "txtOcjena";
+            this.txtOcjena.Size = new System.Drawing.Size(100, 20);
+            this.txtOcjena.TabIndex = 14;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(12, 23);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(21, 13);
+            this.lblId.TabIndex = 15;
+            this.lblId.Text = "ID:";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(15, 40);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(97, 20);
+            this.txtId.TabIndex = 16;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            // 
+            // txtNarudžbe
+            // 
+            this.txtNarudžbe.Location = new System.Drawing.Point(15, 107);
+            this.txtNarudžbe.Name = "txtNarudžbe";
+            this.txtNarudžbe.Size = new System.Drawing.Size(264, 20);
+            this.txtNarudžbe.TabIndex = 17;
             // 
             // FrmCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 450);
+            this.Controls.Add(this.txtNarudžbe);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.txtOcjena);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.numOcjena);
-            this.Controls.Add(this.cboNarudžbe);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnSpremi);
@@ -146,7 +166,6 @@
             this.Name = "FrmCRUD";
             this.ShowIcon = false;
             this.Text = "Recenzije";
-            ((System.ComponentModel.ISupportInitialize)(this.numOcjena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,8 +180,10 @@
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.ComboBox cboNarudžbe;
-        private System.Windows.Forms.NumericUpDown numOcjena;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.TextBox txtOcjena;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtNarudžbe;
     }
 }

@@ -26,6 +26,12 @@ namespace RiziBizi
     {
         private Recenzija recenzija;
 
+        public void RefreshTable()
+            {
+            ShowRecenzije();
+
+            }
+
         public FrmCRUD(Recenzija selectedRecenzija)
         {
             InitializeComponent();
@@ -35,6 +41,8 @@ namespace RiziBizi
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+           
+            
 
         }
 
@@ -44,41 +52,35 @@ namespace RiziBizi
         }
         private void FrmCRUD_Load(object sender, EventArgs e)
         {
-            SetFormText();
-            var narudžbe = NarudžbeRepository.GetNarudžbe();
-            cboNarudžbe.DataSource = narudžbe;
+            ShowRecenzije();
+           
+        }
+
+        private void ShowRecenzije()
+        {
+            List<Recenzija> recenzijas = RecenzijaRepository.GetRecenzija();
+            
         }
         private void SetFormText()
         {
-            Text = recenzija.Naziv +" "+ recenzija.Id ;
+            Text = recenzija.Naziv + " " + recenzija.Id;
         }
 
-        private void cboNarudžbe_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void txtId_TextChanged(object sender, EventArgs e)
         {
-                var currentNarudžbe = cboNarudžbe.SelectedItem as Narudžbe;
-            txtKomentar.Text = currentNarudžbe.Sastojci;
-            txtUsername.Text = currentNarudžbe.Recenzija;
-           
-            numOcjena.Minimum = 0;
-            numOcjena.Maximum = 4;
 
+        }
 
-           
-            var crud =
-           CRUDRepository.GetCRUD(SelectedRecenzija, currentNarudžbe);
-            if (crud != null)
-            {
-                txtKomentar.Text = recenzija.Komentar.ToString();
-                txtUsername.Text = recenzija.Username.ToString();
-                numOcjena.Value = recenzija.Ocjena;
-            }
-            else
-            {
-               
-                numOcjena.Value = 0;
-            }
-            
-            
+        private void txtKomentar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

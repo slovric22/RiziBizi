@@ -10,11 +10,14 @@ namespace RiziBizi.Models
 {
 
     public class Student : Narudžbe
-    
+
     {
         public string Ime { get; set; }
         public string Lozinka { get; set; }
     }
 
-    
+
 }
+
+
+

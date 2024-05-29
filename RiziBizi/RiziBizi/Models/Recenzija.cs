@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace RiziBizi.Models
 {
-    public  class Recenzija : Narudžbe
+    public class Recenzija : Narudžbe
     {
 
-        
-        public int Ocjena { get; set; }
+
+        public string Ocjena { get; set; }
         public string Komentar { get; set; }
-        public string Username { get;  set; }
-        public string Narudžbe {  get; set; }
+        public string Username { get; set; }
+        public string Narudžbe { get; set; }
     }
 
-    }
+}

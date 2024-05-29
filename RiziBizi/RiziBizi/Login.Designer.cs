@@ -57,7 +57,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(135, 47);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(329, 20);
+            this.txtUsername.Size = new System.Drawing.Size(179, 20);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
@@ -65,14 +65,14 @@
             this.txtPassword.Location = new System.Drawing.Point(135, 97);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(329, 20);
+            this.txtPassword.Size = new System.Drawing.Size(179, 20);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(389, 141);
+            this.btnLogin.Location = new System.Drawing.Point(161, 156);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(119, 49);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Prijava";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 176);
+            this.ClientSize = new System.Drawing.Size(359, 217);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -109,4 +109,3 @@
         private System.Windows.Forms.Button btnLogin;
     }
 }
-

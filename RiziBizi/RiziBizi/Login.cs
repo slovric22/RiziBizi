@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RiziBizi.Repositories;
+using RiziBizi;
 
 namespace RiziBizi
 {
@@ -27,13 +29,14 @@ namespace RiziBizi
                 MessageBox.Show("Popunite sva polja!", "Pogreška!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (username == "admin" && password == "test")
-                {
+            {
                 Hide();
-                 frmRecenzije frmRecenzije = new frmRecenzije();
+                frmRecenzije frmRecenzije = new frmRecenzije();
                 frmRecenzije.ShowDialog();
                 Close();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Korisničko ime ili lozinka nisu ispravni!", "Pogreška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

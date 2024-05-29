@@ -60,7 +60,7 @@ namespace RiziBizi.Repositories
             }
             else
             {
-               sql = $"UPDATE Recenzija SET Ocjena = '{recenzija.Ocjena}', Komentar = '{recenzija.Komentar}'";
+                sql = $"UPDATE Recenzija SET Ocjena = '{recenzija.Ocjena}', Komentar = '{recenzija.Komentar}'";
             }
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
@@ -93,10 +93,10 @@ namespace RiziBizi.Repositories
 
         private static Recenzija CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["Id_recenzija"].ToString());
+            int id = int.Parse(reader["Id"].ToString());
             string komentar = reader["Komentar"].ToString();
             string username = reader["Username"].ToString();
-            int ocjena = int.Parse(reader["Ocjena"].ToString());
+            string ocjena = reader["Ocjena"].ToString();
 
             var recenzija = new Recenzija
             {
@@ -109,7 +109,7 @@ namespace RiziBizi.Repositories
         }
         public static void Create(Recenzija recenzija)
         {
-            string sql = $"INSERT INTO Recenzija (Id_recenzija, Komentar, Username , Ocjena) " +
+            string sql = $"INSERT INTO Recenzija (Id, Komentar, Username , Ocjena) " +
                          $"VALUES ('{recenzija.Id}', '{recenzija.Komentar}', {recenzija.Username}, '{recenzija.Ocjena}')";
 
             DB.OpenConnection();

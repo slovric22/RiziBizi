@@ -33,6 +33,7 @@ namespace RiziBizi
             dgvRecenzije.Columns["Ocjena"].DisplayIndex = 1;
             dgvRecenzije.Columns["Komentar"].DisplayIndex = 2;
             dgvRecenzije.Columns["Username"].DisplayIndex = 3;
+            dgvRecenzije.Columns["Narudžbe"].DisplayIndex = 4;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -45,8 +46,10 @@ namespace RiziBizi
             }
 
         }
+
+        private void dgvRecenzije_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }
-
-        
-    

@@ -53,13 +53,13 @@ namespace RiziBizi.Repositories
             int idNarudžbe = int.Parse(reader["IdNarudžbe"].ToString());
             var narudžbe = NarudžbeRepository.GetNarudžbe(idNarudžbe);
             int Recenzija = int.Parse(reader["IdRecenzija"].ToString());
-            
+
             int ocjena = int.Parse(reader["Ocjena"].ToString());
             var crud = new CRUD
 
             {
                 Narudžbe = narudžbe,
-                
+
                 Ocjena = ocjena
             };
             return crud;

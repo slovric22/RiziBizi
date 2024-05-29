@@ -1,33 +1,33 @@
 ﻿namespace RiziBizi
 {
     partial class frmRecenzije
+{
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        if (disposing && (components != null))
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            components.Dispose();
         }
+        base.Dispose(disposing);
+    }
 
-        #region Windows Form Designer generated code
+    #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
             this.dgvRecenzije = new System.Windows.Forms.DataGridView();
             this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecenzije)).BeginInit();
@@ -41,8 +41,9 @@
             this.dgvRecenzije.Location = new System.Drawing.Point(20, 24);
             this.dgvRecenzije.Name = "dgvRecenzije";
             this.dgvRecenzije.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecenzije.Size = new System.Drawing.Size(729, 265);
+            this.dgvRecenzije.Size = new System.Drawing.Size(746, 284);
             this.dgvRecenzije.TabIndex = 0;
+            this.dgvRecenzije.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecenzije_CellContentClick);
             // 
             // btnCreate
             // 
@@ -69,11 +70,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecenzije)).EndInit();
             this.ResumeLayout(false);
 
-        }
-
-        #endregion
-
-        private System.Windows.Forms.DataGridView dgvRecenzije;
-        private System.Windows.Forms.Button btnCreate;
     }
+
+    #endregion
+
+    private System.Windows.Forms.DataGridView dgvRecenzije;
+    private System.Windows.Forms.Button btnCreate;
+}
 }
